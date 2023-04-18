@@ -12,6 +12,9 @@ def vigenere(message, keyword):
     #Strips the spaces on the letters should there be any
     message_stripped=message_uppercase.replace(" ","")
     keyword_stripped=keyword_uppercase.replace(" ","")
+    #Generates the keyword to be in the same length as message, should they not be equivalent
+    keyword_match=keyword_stripped*(len(message_stripped)//len(keyword_stripped)+1)
+    keyword_match=keyword_match[:len(message_stripped)]
 
 #Asking the user for a message to encrypt as well as a desired keyword
 message = input("Please input a desired message to encrypt:")
