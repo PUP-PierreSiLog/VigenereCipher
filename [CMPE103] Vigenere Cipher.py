@@ -15,6 +15,17 @@ def vigenere(message, keyword):
     #Generates the keyword to be in the same length as message, should they not be equivalent
     keyword_match=keyword_stripped*(len(message_stripped)//len(keyword_stripped)+1)
     keyword_match=keyword_match[:len(message_stripped)]
+    #Sets a variable for the encrypted message
+    encrypted_message=""
+    #Starting the encryption process
+    for i in range(len(message_stripped)):
+        #Checks if all the characters of the message is alphabet
+        if message_stripped[i].isalpha():
+            #Converts the alphabets of the message into numeric equivalent
+            message_numbered=ord(message_stripped[i])-65
+            #Converts the key into numeric equivalents
+            keyword_numbered=ord(keyword_match[i])-65
+
 
 #Asking the user for a message to encrypt as well as a desired keyword
 message = input("Please input a desired message to encrypt:")
