@@ -25,7 +25,13 @@ def vigenere(message, keyword):
             message_numbered=ord(message_stripped[i])-65
             #Converts the key into numeric equivalents
             keyword_numbered=ord(keyword_match[i])-65
-
+            #Encrypts the message with respect to the modulo 26
+            encrypted_numbers=(message_numbered+keyword_numbered) %26
+            #Matches the new numbers to their new equivalent alphabet
+            encrypted_letters=chr(encrypted_numbers+65)
+            #Stores the encrypted letters into the variable outside the for loop
+            encrypted_message+=encrypted_letters
+    return encrypted_message
 #Asking the user for a message to encrypt as well as a desired keyword
 message = input("Please input a desired message to encrypt:")
 keyword = input("Please input a desired keyword:")
