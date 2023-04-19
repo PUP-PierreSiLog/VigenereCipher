@@ -26,10 +26,13 @@ def vigenere(message, keyword):
             #Converts the key into numeric equivalents
             keyword_numbered=ord(keyword_match[i])-65
 
-
 #Asking the user for a message to encrypt as well as a desired keyword
 message = input("Please input a desired message to encrypt:")
 keyword = input("Please input a desired keyword:")
 encrypted_message=vigenere(message, keyword)
 
 #Prompting the program to end if the encrypted message results to None
+if encrypted_message==None:
+    sys.exit()
+else:
+    print(encrypted_message)
